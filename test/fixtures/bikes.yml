@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  rental_date: 2020-05-20 14:34:16
+  return_date: 2020-05-20 14:34:16
+  dealer: one
+
+two:
+  name: MyString
+  category: MyString
+  rental_date: 2020-05-20 14:34:16
+  return_date: 2020-05-20 14:34:16
+  dealer: two
