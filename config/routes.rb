@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'sessions#welcome'
   resources :demo_reports
   resources :bikes
   resources :dealers
