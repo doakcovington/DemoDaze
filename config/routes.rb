@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get '/' => 'sessions#welcome'
-  get '/signup' =>'sessions#signup'
-  get '/login' => 'sessions#login'
+  get '/signup' =>'users#new'
+  post '/signup' => 'users#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
   resources :demo_reports
   resources :bikes
   resources :dealers
