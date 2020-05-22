@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:user][:email])
         if @user.try(:authenticate, params[:user][:password])
             session[:user_id] = @user.id
+            redirect_to user_path(@user.id)
         else
             flash[:error] = "The login was invalid. Please try again."
             redirect_to login_path
