@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by_id(params[:id]) #find_by_id allows redirect if there is no id
-        redirect_to '/' if !@user #redirects to welcome if there is no user
+        redirect_to '/' if !@user #redirects to index if there is no user
     end
 
     private
