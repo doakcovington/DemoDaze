@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root 'sessions#index'
 
-  get '/signup' =>'users#new'
-  post '/signup' => 'users#create'
-
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+
+  get '/signup' =>'users#new'
+  post '/signup' => 'users#create'
   
   delete '/logout' => 'sessions#destroy' #Don't use get for logout
 
