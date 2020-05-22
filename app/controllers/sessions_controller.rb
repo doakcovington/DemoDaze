@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id #login user
             redirect_to user_path(@user.id) #redirect to user show page
         else
-            flash[:error] = "The login was invalid. Please try again."
+            flash[:message] = "The login was invalid. Please try again."
             redirect_to login_path
         end
     end
