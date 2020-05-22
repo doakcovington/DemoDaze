@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy' #Don't use get for logout
+  
+  
   resources :demo_reports
   resources :bikes
   resources :dealers
