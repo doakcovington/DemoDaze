@@ -8,11 +8,17 @@
     <%=f.text_field :category %></p>
     
     <p>Select Dealer</p>
-    <p><%=f.collection_select :dealer_id, Dealer.all, :id, :name, :prompt => true %>
+    <p><%= f.collection_select :dealer_id, Dealer.all, :id, :name, :prompt => true %>
 
     <p>Add Dealer</p>
-    <p><%=f.label :dealer %>
-    <%=f.text_field :dealer %></p>
+    <p>
+        <%= f.fields_for :dealer do |dealer| %>
+            <%= dealer.label :name %>
+            <%= dealer.text_field :name %>
+            <%= dealer.submit "Add Dealer" %>
+        <% end %>
+    </p>
+    
 
     <%=f.submit "Add Bike" %>
 <% end %>
