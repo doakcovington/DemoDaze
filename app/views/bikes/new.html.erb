@@ -1,1 +1,18 @@
 <h1>Add A Bike</h1>
+
+<%= form_for @bike do |f| %>
+    <p><%=f.label :name %>
+    <%=f.text_field :name %></p>
+    
+    <p><%=f.label :category %>
+    <%=f.text_field :category %></p>
+    
+    <p>Select Dealer</p>
+    <p><%=f.collection_select :dealer_id, Dealer.all, :id, :name, :prompt => true %>
+
+    <p>Add Dealer</p>
+    <p><%=f.label :dealer %>
+    <%=f.text_field :dealer %></p>
+
+    <%=f.submit "Add Bike" %>
+<% end %>
