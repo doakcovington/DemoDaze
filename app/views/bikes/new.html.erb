@@ -1,6 +1,6 @@
 <h1>Add A Bike</h1>
 
-<%= render '/layouts/errors', locals: {object: @bike} %>
+<%= render partial: '/layouts/errors', locals: {object: @bike} %>
 
 <%= form_for @bike do |f| %>
   <p><%=f.label :name %>
