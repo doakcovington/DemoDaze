@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   
   
   resources :demo_reports
-  resources :bikes
+  resources :bikes do
+    resources :demo_reports, only: [:new, :index]
+  end
   resources :dealers
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

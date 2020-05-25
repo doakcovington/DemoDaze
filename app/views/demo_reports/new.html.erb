@@ -1,0 +1,20 @@
+<h1>Create A New Demo Report</h1>
+
+<%= form_for(@demo_report) do |f| %>
+    <p><%=f.label :location %>
+    <%=f.text_field :location %></p>
+
+     <p><%=f.label :rental_date %>
+    <%=f.date_field :rental_date %></p>
+
+    <p><%=f.label :return_date %>
+    <%=f.date_field :return_date %></p>
+
+    <p><%=f.label :report %>
+    <%=f.text_area :report %></p>
+
+    <%= f.hidden_field :bike_id %>
+    
+
+    <%=f.submit "Submit Report" %>
+<% end %>
