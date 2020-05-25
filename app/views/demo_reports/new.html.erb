@@ -1,4 +1,9 @@
-<h1> Create A New Demo Report for <%= @demo_report.bike.name %></h1>
+
+<% if params[:bike_id] %>
+    <h1> Create A New Demo Report for <%= @demo_report.bike.name %></h1>
+<% else %>
+    <h1>Create A New Demo Report</h1>
+<% end %>
 
 <%= form_for(@demo_report) do |f| %>
     <p><%=f.label :location %>

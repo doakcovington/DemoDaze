@@ -1,6 +1,11 @@
 class DemoReportsController < ApplicationController
     def index
-        @demo_reports = DemoReport.all
+        if params[:bike_id] #nested route show these bikes
+            @bike = Bike.find_by_id(params[:bike_id])
+            @demo_reports = @bike.demo_reports
+        else #show all bikes
+            @demo_reports = DemoReport.all
+        end
     end
 
     def show
@@ -8,8 +13,11 @@ class DemoReportsController < ApplicationController
     end
 
     def new
-        @bike = Bike.find_by_id(params[:bike_id])
-        @demo_report = @bike.demo_reports.build
+        if @bike = Bike.find_by_id(params[:bike_id])
+            @demo_report = @bike.demo_reports.build
+        else
+            @demo_report = DemoReport.new
+        end
     end
 
     def create
