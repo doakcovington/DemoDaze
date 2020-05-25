@@ -1,5 +1,5 @@
 class DealersController < ApplicationController
     def index
-        @dealers = Dealer.all
+        @dealers = Dealer.alpha #sorts delears in alphabetical order
     end
 end
