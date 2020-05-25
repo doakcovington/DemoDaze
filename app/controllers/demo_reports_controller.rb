@@ -8,12 +8,13 @@ class DemoReportsController < ApplicationController
     end
 
     def new
-        @demo_report = DemoReport.new
-        # @bike = Bike.find_by_id(params[:bike_id])
-        # @demo_report = @bike.demo_reports.build
+        @bike = Bike.find_by_id(params[:bike_id])
+        @demo_report = @bike.demo_reports.build
     end
 
-    def create
+    private
 
+    def set_bike
+        @bike = Bike.find_by_id(params[:bike_id])
     end
 end

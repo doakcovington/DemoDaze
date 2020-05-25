@@ -1,7 +1,7 @@
 <h1>Add A Bike</h1>
 
 <%= form_for @bike do |f| %>
-    <p><%=f.label :name %>
+  <p><%=f.label :name %>
     <%=f.text_field :name %></p>
     
     <p><%=f.label :category %>
@@ -17,7 +17,6 @@
             <%= dealer.text_field :name %>
         <% end %>
     </p>
-    
-
     <%=f.submit "Add Bike" %>
+
 <% end %>
