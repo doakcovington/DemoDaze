@@ -1,6 +1,6 @@
 <h1>Bikes</h1>
 
 <% @bikes.each do |bike| %>
-
-    <li><%= bike.name %></li>
+    <h3><%= bike.name %></h3>
+    <%= link_to "Create a Demo Report for this bike", new_bike_demo_report_path(bike.id)%>
 <% end %>
