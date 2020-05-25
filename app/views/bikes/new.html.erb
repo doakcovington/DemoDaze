@@ -9,16 +9,19 @@
     <p><%=f.label :category %>
     <%=f.text_field :category %></p>
     
-    <p>Select Dealer</p>
-    <p><%= f.collection_select :dealer_id, Dealer.all, :id, :name, :prompt => true %>
+  <p> Select a Dealer: </p>
+  <div>
+    <%= f.collection_select(:dealer_id, Dealer.all, :id, :name, include_blank: 'Select Dealer')%>
 
-    <p>Add Dealer</p>
-    <p>
-        <%= f.fields_for :dealer do |dealer| %>
-            <%= dealer.label :name %>
-            <%= dealer.text_field :name %>
-        <% end %>
-    </p>
-    <%=f.submit "Add Bike" %>
+  </div>
 
+  <p> Or create a new Dealer: </p>
+  <div>
+    <%=f.fields_for :dealer do |b| %>
+      <%= b.label :name %>
+      <%= b.text_field :name %>
+    <% end %>
+  </div>
+  <br>
+  <%= f.submit %>
 <% end %>

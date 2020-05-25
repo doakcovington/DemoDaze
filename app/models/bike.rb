@@ -5,5 +5,8 @@ class Bike < ApplicationRecord
   accepts_nested_attributes_for :dealer
 
   validates :name, presence: true
-  validates :dealer, presence: true
+
+  def dealer_attributes=(attributes)
+    dealer = Dealer.find_or_create_by(attributes) if !attributes['name'].empty?
+  end
 end
