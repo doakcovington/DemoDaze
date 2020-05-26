@@ -31,6 +31,17 @@ class DemoReportsController < ApplicationController
         end
     end
 
+    def edit
+        @demo_report = DemoReport.find(params[:id])
+    end
+
+    def update
+        @demo_report = DemoReport.find(params[:id])
+        @demo_report.update(demo_report_params)
+    
+        redirect_to bike_path(@demo_report.bike)
+      end
+
     private
 
     def demo_report_params

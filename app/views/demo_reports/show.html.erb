@@ -1,1 +1,4 @@
 <h1> <%=@demo_report.bike.name %> Demo Report</h1>
+<p>Location: <%=@demo_report.location %></p>
+<p>Report: <%=@demo_report.report %></p>
+<div><%= link_to "Edit Report", edit_demo_report_path(@demo_report) %></div>
