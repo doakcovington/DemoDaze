@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
    
             #if we find user & they have the right password
             if @user && @user.authenticate(params[:user][:password])
-              session[:user_id] = @user.id
+              session[:user_id] = @user.id #logs the user in
               redirect_to user_path(@user.id)
             else
                flash[:message] = "Password was invalid. Please try again."
@@ -31,6 +31,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete(:user_id)
+        flash[:message] = "You have been logged out."
         redirect_to root_path
     end
 

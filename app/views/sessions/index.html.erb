@@ -1,5 +1,7 @@
 <h1>Welcome to DemoDaze</h1>
-
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
 <div>
     <%= link_to "Login", "/login" %>
     |
