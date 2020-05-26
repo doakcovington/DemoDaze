@@ -22,7 +22,7 @@ class DemoReportsController < ApplicationController
 
     def create
         @demo_report = DemoReport.new(demo_report_params)
-        @demo_report.user_id = session[:user_id]
+        @demo_report.user_id = session[:user_id] #assigns the demo report to the
         if @demo_report.save
             redirect_to demo_report_path(@demo_report)
         else
@@ -39,12 +39,12 @@ class DemoReportsController < ApplicationController
         @demo_report = DemoReport.find(params[:id])
         @demo_report.update(demo_report_params)
     
-        redirect_to bike_path(@demo_report.bike)
+        redirect_to bike_path(@demo_report)
       end
 
     private
 
-    def demo_report_params
+    def demo_report_params #strong params
         params.require(:demo_report).permit(:bike_id, :location, :rental_date, :return_date, :report)
     end
 end

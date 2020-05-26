@@ -1,2 +1,6 @@
 <h1>Created Bike</h1>
-<%= Bike.all.last.name%>
+<%= @bike.name%>
+
+<h3>Write Demo Report for Bike</h1>
+
+<%= link_to "Create a Demo Report for this bike", new_bike_demo_report_path(bike.id)%>

@@ -6,7 +6,8 @@ class Bike < ApplicationRecord
 
   validates :name, presence: true
 
-  def dealer_attributes=(attributes)
+
+  def dealer_attributes=(attributes) #reader method for dealer nested form inside new bike form
     dealer = Dealer.find_or_create_by(attributes) if !attributes['name'].empty?
   end
 end

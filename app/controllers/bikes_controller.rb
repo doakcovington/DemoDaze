@@ -4,7 +4,7 @@ class BikesController < ApplicationController
     end
 
     def show
-        
+        @bike = Bike.find_by_id(params[:bike_id])
     end
 
     def new
@@ -24,7 +24,7 @@ class BikesController < ApplicationController
 
     private
 
-    def bike_params
+    def bike_params #strong params
         params.require(:bike).permit(:name, :category, :dealer_id, dealer_attributes: [:name])
     end
 end
