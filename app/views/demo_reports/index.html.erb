@@ -2,5 +2,6 @@
 <ul>
     <% @demo_reports.each do |report| %>
         <li><%= report.bike.name%> Demo Report </li>
+        <%= link_to "View Report", demo_report_path(report.id) %>
     <% end %>
 </ul>
