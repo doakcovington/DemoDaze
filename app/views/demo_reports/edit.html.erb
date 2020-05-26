@@ -1,1 +1,24 @@
 <h1>Edit <%= @demo_report.bike.name %> Report </h1>
+
+<%= header(@demo_report) %>
+
+<%= render partial: '/layouts/errors', locals: {object: @demo_report} %>
+
+<%= form_for(@demo_report) do |f| %>
+    <p><%=f.label :location %>
+    <%=f.text_field :location %></p>
+
+     <p><%=f.label :rental_date %>
+    <%=f.date_field :rental_date %></p>
+
+    <p><%=f.label :return_date %>
+    <%=f.date_field :return_date %></p>
+
+    <p><%=f.label :report %>
+    <%=f.text_area :report %></p>
+
+    <%= f.hidden_field :bike_id %>
+    
+
+    <%=f.submit "Submit Report" %>
+<% end %>
