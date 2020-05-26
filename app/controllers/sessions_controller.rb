@@ -8,21 +8,34 @@ class SessionsController < ApplicationController
          
     end
 
-    def create
-        @user = User.find_by(email: params[:user][:email]) #find user
-   
-        #if we find something & they have the right password
-        if @user && @user.authenticate(params[:user][:password])
-          session[:user_id] = @user.id
-          redirect_to user_path(@user.id)
+    def create 
+        if params[:provider]
+            @user = User.omniauth_user(auth)
+
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
         else
-           flash[:message] = "Password was invalid. Please try again."
-           redirect_to login_path
+            @user = User.find_by(email: params[:user][:email]) #find user
+   
+            #if we find user & they have the right password
+            if @user && @user.authenticate(params[:user][:password])
+              session[:user_id] = @user.id
+              redirect_to user_path(@user.id)
+            else
+               flash[:message] = "Password was invalid. Please try again."
+               redirect_to login_path
+            end
+            
         end
      end
 
     def destroy
         session.delete(:user_id)
         redirect_to root_path
+    end
+
+    private
+    def auth
+        request.env['omniauth.auth']
     end
 end

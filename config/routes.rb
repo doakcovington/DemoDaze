@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   
   delete '/logout' => 'sessions#destroy' #Don't use get for logout
 
+  get '/auth/:provider/callback' => 'sessions#create'
+
   
   
   resources :demo_reports

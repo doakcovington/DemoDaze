@@ -4,4 +4,11 @@ class User < ApplicationRecord
     validates :email, uniqueness: true, presence: true
 
     has_secure_password
+
+    def self.omniauth_user(auth)
+        self.find_or_create_by(email: auth[:info][:email]) do |user|#looks through db to see if email already exists (if not then initialize user)
+            user.name = auth[:info][:name]
+            user.password = SecureRandom.hex #creates random password
+        end
+    end
 end
