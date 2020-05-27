@@ -3,19 +3,19 @@
 <%= render partial: '/layouts/errors', locals: {object: @bike} %>
 
 <%= form_for @bike do |f| %>
-  <p><%=f.label :name %>
-    <%=f.text_field :name %></p>
+  <%=f.label :name %>
+  <%=f.text_field :name %>
     
-    <p><%=f.label :category %>
-    <%=f.text_field :category %></p>
+  <%=f.label :category %>
+  <%=f.text_field :category %>
     
-  <p> Select a Dealer: </p>
+  <h3>Select a Dealer: </h3>
   <div>
-    <%= f.collection_select(:dealer_id, Dealer.all, :id, :name, include_blank: 'Select Dealer')%>
+    <%= f.collection_select :dealer_id, Dealer.all, :id, :name, include_blank: 'Select Dealer'%>
 
   </div>
 
-  <p> Or create a new Dealer: </p>
+  <h4>Or create a new Dealer: </h4>
   <div>
     <%=f.fields_for :dealer do |b| %>
       <%= b.label :name %>
