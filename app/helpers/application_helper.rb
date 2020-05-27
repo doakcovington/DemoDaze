@@ -1,11 +1,11 @@
 module ApplicationHelper
     
     def logged_in?
-        !!current_user
+        !!session[:user_id]
     end
 
     def current_user
-        @current_user ||= User.find_by(id: session[:id]) if session[:user_id]
+        @current_user ||= User.find_by_id(session[:id])
     end
 
     def nav_bar
