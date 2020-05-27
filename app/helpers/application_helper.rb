@@ -9,10 +9,10 @@ module ApplicationHelper
     end
 
     def nav_bar
-        # if logged_in?
+         if logged_in?
             render partial: '/layouts/logged_in'
-       # else
-            #render partial: '/layouts/logged_out'
-        # end
+        else
+            render partial: '/layouts/logged_out'
+         end
     end
 end
