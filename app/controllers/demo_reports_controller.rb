@@ -1,4 +1,6 @@
 class DemoReportsController < ApplicationController
+    before_action :redirect_if_not_logged_in
+    
     def index
         if params[:bike_id] #nested route show these bikes
             @bike = Bike.find_by_id(params[:bike_id])
