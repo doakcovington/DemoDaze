@@ -1,15 +1,17 @@
 class BikesController < ApplicationController
+    before_action :redirect_if_not_logged_in
+
+    def new
+        @bike = Bike.new
+        @bike.build_dealer
+    end
+    
     def index
         @bikes = Bike.all
     end
 
     def show
         @bike = Bike.find_by_id(params[:bike_id])
-    end
-
-    def new
-        @bike = Bike.new
-        @bike.build_dealer
     end
 
     def create
