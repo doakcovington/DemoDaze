@@ -1,1 +1,6 @@
 <h1>Welcome, <%=@user.name%>!</h1>
+
+<h3>Your Demo Reports:</h3>
+<% @user.demo_reports.each do |d| %>
+    <%=d.bike.name %>
+<% end %>
