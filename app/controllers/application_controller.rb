@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
+    
+    # helper_method :current_user, :logged_in? #gives access to helper methods in views
 
     private
 
     def logged_in?
-        !!current_user
+        !!session[:user_id]
     end
 
     def current_user
