@@ -1,7 +1,7 @@
 module ApplicationHelper
     
     def logged_in?
-        !!session[:user_id]
+        !!session[:user_id] #returns true if logged in
     end
 
     def current_user
