@@ -4,7 +4,12 @@ class DemoReportsController < ApplicationController
     def index
         if params[:bike_id] #nested route show these bikes
             @bike = Bike.find_by_id(params[:bike_id])
-            @demo_reports = @bike.demo_reports
+            if @bike #if there is a bike
+                @demo_reports = @bike.demo_reports #show all demo reports for that bike
+            else
+                flash[:message] = "That bike doesn't exist"
+                @demo_reports = DemoReport.all #show all demo reports
+            end
         else #show all bikes
             @demo_reports = DemoReport.all
         end
@@ -42,7 +47,15 @@ class DemoReportsController < ApplicationController
         @demo_report.update(demo_report_params)
     
         redirect_to bike_path(@demo_report)
-      end
+    end
+
+
+    def destroy
+        @user = current_user
+        @demo_report = @user.demo_reports
+        @demo_report.destroy
+        redirect_to users_path(@user)
+    end
 
     private
 
