@@ -1,4 +1,9 @@
 <h1>Demo Reports:</h1>
+
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
+
 <ul>
     <% @demo_reports.each do |report| %>
         <li><%= report.bike.name%> Demo Report </li>
