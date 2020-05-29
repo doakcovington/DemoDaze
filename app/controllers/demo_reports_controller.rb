@@ -56,10 +56,9 @@ class DemoReportsController < ApplicationController
 
 
     def destroy
-        @user = current_user
-        @demo_report = @user.demo_reports
+        @demo_report = DemoReport.find(params[:id])
         @demo_report.destroy
-        redirect_to users_path(@user)
+        redirect_to demo_reports_path
     end
 
     private
