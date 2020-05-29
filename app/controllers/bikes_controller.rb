@@ -7,7 +7,7 @@ class BikesController < ApplicationController
     end
     
     def index
-        @bikes = Bike.all
+        @bikes = current_user.bikes
     end
 
     def show
