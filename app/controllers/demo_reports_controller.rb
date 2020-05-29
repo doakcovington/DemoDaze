@@ -25,7 +25,7 @@ class DemoReportsController < ApplicationController
     end
 
     def new
-        if @bike = Bike.find_by_id(params[:id])
+        if @bike = Bike.find_by_id(params[:bike_id])
             @demo_report = @bike.demo_reports.build
         else
             @demo_report = DemoReport.new
