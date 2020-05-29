@@ -16,7 +16,12 @@ class DemoReportsController < ApplicationController
     end
 
     def show
-        @demo_report = DemoReport.find_by_id(params[:id])
+       if  @demo_report = DemoReport.find_by_id(params[:id]) #if demo report exists
+            @demo_report #display demo report page
+       else
+            flash[:message] = "That report doesn't exist"
+            redirect_to demo_reports_path #redirect to demo report index page
+       end
     end
 
     def new
