@@ -25,10 +25,11 @@ class DemoReportsController < ApplicationController
     end
 
     def new
-        if @bike = Bike.find_by_id(params[:bike_id])
+        if @bike = Bike.find_by_id(params[:bike_id]) #find the bike to write a demo report for
             @demo_report = @bike.demo_reports.build
-        else
-            @demo_report = DemoReport.new
+        else #if bike doesn't exist then redirect to bike index page where use can write a demo report for a bike
+            flash[:message] = "That bike doesn't exist"
+           redirect_to bikes_path
         end
     end
 

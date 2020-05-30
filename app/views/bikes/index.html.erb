@@ -1,3 +1,7 @@
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
+
 <h1>Bikes</h1>
 
 <% @bikes.each do |bike| %>
