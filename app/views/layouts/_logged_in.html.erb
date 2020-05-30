@@ -1,8 +1,8 @@
 <nav> 
-    <%= link_to 'Home', user_path(current_user) %>
-    <%= link_to 'Add Bike', new_bike_path %>
-    <%= link_to 'Bikes', bikes_path %>
-    <%= link_to 'Demo Reports', demo_reports_path %>
-    <%= link_to 'Dealers', dealers_path %>
+    <%= link_to 'Home', user_path(current_user), class:'button' %>
+    <%= link_to 'Add Bike', new_bike_path, class:'button'  %>
+    <%= link_to 'Bikes', bikes_path, class:'button'  %>
+    <%= link_to 'Demo Reports', demo_reports_path, class:'button'  %>
+    <%= link_to 'Dealers', dealers_path, class:'button'  %>
     <%= link_to 'Logout', '/logout', method: :delete, class:'button'%>
 </nav>

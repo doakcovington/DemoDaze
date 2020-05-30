@@ -7,15 +7,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <nav><%= nav_bar %></nav>
+    <nav class='navbar'><%= nav_bar %></nav>
   </head>
   <body>
-    <div class='container'>
-      <div class='row'>
-        <div class='col-sm'>
-          <%= yield %>
-        </div>
-      </div>
-    </div>
+    <%= yield %>
   </body>
 </html>

@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ body {
+     background-color: #ecf0f1;
+ }
+
+ a.button {
+    background: transparent url('bg_button_a.gif') no-repeat scroll top right;
+    color: #3498db;
+    display: block;
+    font-size: 12px;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+  }
