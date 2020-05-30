@@ -33,6 +33,10 @@ gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
 gem 'dotenv-rails'
 
+#bootstrap gem
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
