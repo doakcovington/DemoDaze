@@ -14,9 +14,13 @@ class UsersController < ApplicationController
     end
 
     def show
-        redirect_if_not_logged_in
-        @user = User.find_by_id(params[:id]) #find_by_id allows redirect if there is no id
-        redirect_to '/' if !@user #redirects to index if there is no user
+        #redirect_if_not_logged_in
+        if current_user == User.find_by_id(params[:id])
+            @user = User.find_by_id(params[:id]) #find_by_id allows redirect if there is no id
+        else
+            redirect_to '/'
+        end
+        #redirect_to '/' if !@user #redirects to index if there is no user
     end
 
     private
