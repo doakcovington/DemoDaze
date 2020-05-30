@@ -2,7 +2,8 @@
 
 <h3>Your Demo Reports:</h3>
 <% @user.demo_reports.each do |d| %>
-    <%=d.bike.name %>
-    <%= button_to "Edit Report", edit_demo_report_path(d.id), method: :get %>
+    <p>Bike: <%=d.bike.name %></p>
+    <p>Report: <%= d.report %></p>
+    <%= button_to "Edit Report", edit_demo_report_path(d.id), method: :get %> 
     <%= button_to "Delete Report", demo_report_path(d.id), method: :delete %>
 <% end %>
