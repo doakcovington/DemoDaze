@@ -45,14 +45,21 @@ class DemoReportsController < ApplicationController
     end
 
     def edit
-        @demo_report = DemoReport.find(params[:id])
+        if current_user == User.find_by_id(params[:id])
+            @demo_report = DemoReport.find(params[:id])
+        else
+            redirect_to user_path
+        end
     end
 
     def update
         @demo_report = DemoReport.find(params[:id])
-        @demo_report.update(demo_report_params)
-    
-        redirect_to demo_report_path(@demo_report)
+        if @demo_report.update(demo_report_params)
+            redirect_to demo_report_path(@demo_report)
+        else
+            flash[:message] = "Edit wasn't valid"
+            redirect_to user_path
+        end
     end
 
 
