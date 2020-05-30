@@ -52,7 +52,7 @@ class DemoReportsController < ApplicationController
         @demo_report = DemoReport.find(params[:id])
         @demo_report.update(demo_report_params)
     
-        redirect_to bike_path(@demo_report)
+        redirect_to demo_report_path(@demo_report)
     end
 
 
