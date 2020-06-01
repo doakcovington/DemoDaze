@@ -1,9 +1,9 @@
-<h1>Welcome to DemoDaze</h1>
+<h1 class="display-1">DemoDaze</h1>
 <% if flash[:message] %>
     <%= flash[:message] %>
 <% end %>
 
-<div>
+<div class="lead mb-5">
     <%= link_to "Login", "/login" %>
     |
     <%= link_to "Sign Up", "/signup"%>

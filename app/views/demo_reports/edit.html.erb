@@ -2,7 +2,9 @@
 
 <%= header(@demo_report) %>
 
-<%= render partial: '/layouts/errors', locals: {object: @demo_report} %>
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
 
 <%= form_for(@demo_report) do |f| %>
     <p><%=f.label :location %>

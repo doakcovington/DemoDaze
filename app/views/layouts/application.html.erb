@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>DemoDaze</title>
+    <link rel="shortcut icon" href="http://www.example.com/myicon.ico"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,8 @@
     <nav class='navbar'><%= nav_bar %></nav>
   </head>
   <body>
-    <%= yield %>
+    <div class="container text-center"">
+      <%= yield %>
+    </div>
   </body>
 </html>
