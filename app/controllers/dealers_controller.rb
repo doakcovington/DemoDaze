@@ -5,9 +5,9 @@ class DealersController < ApplicationController
 
     def show
         if  @dealer = Dealer.find_by_id(params[:id]) #if demo report exists
-            @dealer #display demo report page
+            @dealer #display dealer page
        else
-            flash[:message] = "That bike doesn't exist"
+            flash[:message] = "That dealer doesn't exist"
             redirect_to bikes_path #redirect to demo report index page
        end
     end
