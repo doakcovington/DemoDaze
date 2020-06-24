@@ -1,5 +1,9 @@
 <h1>Welcome, <%=@user.name%>!</h1>
 
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
+
 <h3>Your Demo Reports:</h3>
 <% @user.demo_reports.each do |d| %>
     <p>Bike: <%=d.bike.name %></p>
