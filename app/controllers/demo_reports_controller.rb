@@ -45,11 +45,16 @@ class DemoReportsController < ApplicationController
     end
 
     def edit
-        if current_user == User.find_by_id(params[:id])
-            @demo_report = DemoReport.find(params[:id])
-        else
-            redirect_to user_path
-        end
+        # byebug
+        # if current_user == User.find_by_id(params[:id])
+        #     @demo_report = DemoReport.find(params[:id])
+        # else
+        #     redirect_to user_path
+        # end
+       if @demo_report = current_user.demo_reports.find_by(id: params[:id])
+       else 
+        redirect_to user_path
+       end
     end
 
     def update
