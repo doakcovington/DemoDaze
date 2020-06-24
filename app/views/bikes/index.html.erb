@@ -6,5 +6,6 @@
 
 <% @bikes.each do |bike| %>
     <h3><%= bike.name %></h3>
-    <%= link_to "Create a Demo Report for this bike", new_bike_demo_report_path(bike.id)%>
+    <%= link_to "Create a Demo Report for this bike", new_bike_demo_report_path(bike.id)%><br>
+    <%= link_to "View Bike", bike_path(bike.id) %>
 <% end %>
