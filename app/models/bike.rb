@@ -7,7 +7,7 @@ class Bike < ApplicationRecord
   validates :name, presence: true
   validate :dealer_bike_uniquness
 
-  scope :order_by_number_of_demo_reports,-> {joins(:demo_reports).group(:id).order('count(*)desc')} #Order the bikes by number of demo reports from most demo reports to least
+  scope :order_by_number_of_demo_reports,-> {left_joins(:demo_reports).group(:id).order('count(*)desc')} #Order the bikes by number of demo reports from most demo reports to least
 
   def dealer_attributes=(attributes) #reader method for dealer nested form inside new bike form
     self.dealer = Dealer.find_or_create_by(attributes) if !attributes['name'].empty?
