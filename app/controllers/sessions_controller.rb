@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
               session[:user_id] = @user.id #logs the user in
               redirect_to user_path(@user.id)
             else
-               flash[:message] = "Password was invalid. Please try again."
+               flash[:message] = "Login was invalid. Please try again."
                redirect_to login_path
             end
             
