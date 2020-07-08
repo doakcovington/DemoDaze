@@ -7,7 +7,7 @@ class BikesController < ApplicationController
     end
     
     def index
-        @bikes = Bike.order_by_number_of_demo_reports
+        @bikes = Bike.all
     end
 
     def show
