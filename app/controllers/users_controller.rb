@@ -18,6 +18,7 @@ class UsersController < ApplicationController
         if current_user == User.find_by_id(params[:id])
             @user = User.find_by_id(params[:id]) #find_by_id allows redirect if there is no id
         else
+            flash[:message] = "Click Home to go to your page"
             redirect_to '/'
         end
         #redirect_to '/' if !@user #redirects to index if there is no user
