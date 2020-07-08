@@ -9,7 +9,7 @@ class User < ApplicationRecord
     def self.omniauth_user(auth)
         self.find_or_create_by(email: auth[:info][:email]) do |user|#looks through db to see if email already exists (if not then initialize user)
             user.name = auth[:info][:name]
-            user.password = SecureRandom.hex #creates random password
+            user.password = SecureRandom.hex #generates a random hex string
         end
     end
 end

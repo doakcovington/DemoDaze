@@ -6,7 +6,8 @@
 
 <ul>
     <% @demo_reports.each do |report| %>
-        <li><%= report.bike.name%> Demo Report </li>
-        <%= link_to "View Report", demo_report_path(report.id) %>
+        <h4><%= report.bike.name%> Demo Report </h4>
+        <p>By: <%= report.user.name%> </p>
+        <p><%= link_to "View Report", demo_report_path(report.id) %><p>
     <% end %>
 </ul>

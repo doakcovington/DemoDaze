@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   resources :demo_reports
   resources :bikes do
-    resources :demo_reports, only: [:new, :index] #nested route
+    resources :demo_reports, only: [:new, :index, :update] #nested route (shallow routing)
   end
   resources :dealers
   resources :users

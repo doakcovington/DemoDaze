@@ -3,6 +3,6 @@
     <h3><%= dealer.name %></h3>
     <% dealer.bikes.each do |bike| %>
         <li><%= bike.name %></li>
-        <%= link_to "View Bike", bike_path(bike.id) %>r
+        <%= link_to "View Bike", bike_path(bike.id) %>
     <% end %>
 <% end %>

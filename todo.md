@@ -1,0 +1,4 @@
+- [ ] 1. Dealer show page or no dealer show page? 
+- [ ] 2. Error messages for current_user validations
+- [X] 3. Nested route: bikes/id/demo_reports
+- [ ] 4. Create demo report from nested route: bike/id/demo_reports
